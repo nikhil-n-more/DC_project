@@ -1,0 +1,59 @@
+body,html{
+  position: fixed;
+    font-family:tahoma;
+    font-size:12px; 
+    padding:0px;
+    margin:0px;
+    max-width: 100%;
+    min-height: 100%;
+    background-color: rgb(20, 190, 220);
+    }
+    #chess{
+      width: 50%;
+      height: 95%;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+    #myBoard{
+      width: 80%;
+      float: left;
+      margin: 20px;
+    }
+    #info{
+      position: fixed;
+      width: 38.5%;
+      height: auto;
+      bottom: 30px;
+      left: 20px;
+      background-color: brown;
+      padding: 8px;
+      margin-top: 10px;
+      margin-left: 20px;
+      font-size: 16px;
+      color: coral;
+      font-weight: bold;
+    }
+    #report{
+      background-color: rgb(232, 243, 243);
+      width: 70%;
+      height: 20px;
+      padding: 8px;
+    }
+    #fen{
+      background-color: rgb(208, 228, 221);
+      width: 95%;
+      height: auto;
+      padding: 8px;
+    }
+    #pgn{
+      background-color: rgb(224, 219, 214);
+      width: 95%;
+      height: auto;
+      padding: 8px;
+    }
+    label{
+      color: rgb(23, 230, 92);
+      font-size: 20px;
+      font-weight: bold;
+    }
