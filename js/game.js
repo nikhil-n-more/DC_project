@@ -204,6 +204,19 @@ board = Chessboard('myBoard', config)
 
 updateStatus()
 
+
+
+
+
+
+//Ekagra yaha se dekhna 
+//server json return karega and then I am parsing it retreive JSON object
+
+
+
+
+
+
 // most important part - incoming messages
 connection.onmessage = function (message) {
   // try to parse JSON message. Because we know that the server
@@ -219,7 +232,7 @@ connection.onmessage = function (message) {
   // NOTE: if you're not sure about the JSON structure
   // check the server source code above
   // first response from the server with user's color
-  if (json.type === 'color') { 
+  if (json.type === 'color') {    /////just ek field hai usko to kuch bhi naam de sakta hai
     myColor = json.data;
     side = json.side;
     console.log(side);
