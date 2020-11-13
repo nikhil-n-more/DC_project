@@ -1,13 +1,16 @@
 #chat { 
     font-family:tahoma; 
-    font-size:12px; 
+    font-size:20px; 
     padding:0px;
     margin:0px;
     position: fixed;
-    top: 20px;
-    right: 20px;
-    height: 95%;
-    width:40%;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width:50%;
+    background:linear-gradient(
+        to right, rgba(49, 47, 49, 0.52),
+        rgba(45, 45, 48, 0.835));
 }
 #chat p { 
     line-height:18px; 
@@ -18,18 +21,20 @@
 }
 #content { 
     padding:5px; 
-    background:#ddd; 
+    background: #fdfeff;; 
     border-radius:5px;
     overflow-y: scroll; 
-    border:1px solid #CCC;
+    border:1px solid #ffffff;
     margin-top:10px; 
     height: 85%; 
+    width:70%;
 }
 #input { 
     border-radius:2px; 
     border:1px solid #ccc;
     margin-top:10px; 
-    padding:5px; width:400px;
+    padding:5px; 
+    width:70%;
 }
 #status { 
     width:88px;

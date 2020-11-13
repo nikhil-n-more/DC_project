@@ -1,5 +1,3 @@
-//Tutorial From "https://medium.com/@martin.sikora/node-js-websocket-simple-chat-tutorial-2def3a841b61"
-
 "use strict";
 // Optional. You will see this name in eg. 'ps' or 'top' command
 process.title = 'CHESS';
@@ -11,9 +9,12 @@ var webSocketsServerPort = 3000;
 
 // websocket and http servers
 var app = express();
+app.use(express.static(__dirname + "/"));
 var webSocketServer = require('websocket').server;
 var http = require('http');
-
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/home.html');
+});
 // latest 100 messages
 var history = [ ];
 // list of currently connected clients (users)
@@ -62,14 +63,19 @@ wsServer.on('request', function(request) {
   var userName = false;
   var userColor = false;
   var side = "white";
+  if(clients.length%2 == 0){
+    side = "black";
+  }
+  connection.sendUTF(JSON.stringify({
+    type: 'side',
+    side: side,
+  }));
   console.log((new Date()) + ' Connection accepted.');
   // send back chat history
   if (history.length > 0) {
     connection.sendUTF(
         JSON.stringify({ type: 'history', data: history} ));
   }
-
-
 
 
   // user sent some message
@@ -88,11 +94,11 @@ wsServer.on('request', function(request) {
         userName = htmlEntities(message.utf8Data);
         // get random color and send it back to the user
         userColor = colors.shift();
-        if(clients.length%2 == 0){
-          side = "black";
-        }
+        //if(clients.length%2 == 0){
+          //side = "black";
+        //}
         connection.sendUTF(
-            JSON.stringify({ type:'color', data: userColor, side: side }));
+            JSON.stringify({ type:'color', data: userColor}));
         //console.log((new Date()) + ' User is known as: ' + userName
           //          + ' with ' + userColor + ' color.');
       } else { // log and broadcast the message
