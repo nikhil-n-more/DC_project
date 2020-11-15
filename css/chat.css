@@ -9,7 +9,7 @@
     height: 100%;
     width:50%;
     background:linear-gradient(
-        to right, rgba(49, 47, 49, 0.52),
+        to right, rgba(105, 103, 105, 0.52),
         rgba(45, 45, 48, 0.835));
 }
 #chat p { 
